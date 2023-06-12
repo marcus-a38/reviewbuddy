@@ -82,7 +82,7 @@ def add_bm(title: str, zipcode: str, data: dict):
     fulltitle = _concat_title_zip(title, zipcode)
     bookmarks = load_bms()
 
-    with open(BOOKMARKS_PATH, 'r+') as jfile:
+    with open(BOOKMARKS_PATH, 'w') as jfile:
         try:
             bookmarks[fulltitle] = data
             json.dump(bookmarks, jfile, indent=4)
